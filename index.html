@@ -36,21 +36,23 @@
   <div class="container">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
+         <div class="carousel-item active">
           <img src="img/img.png" class="d-block w-100" alt="Gambar 1">
-      <button class="btn btn-primary mt-1" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
+      <button class="btn btn-primary d-flex mt-2 mx-auto" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
 
-        </div>
+      </div> 
+
         <div class="carousel-item">
           <img src="img/img.png" class="d-block w-100" alt="Gambar 2">
-      <button class="btn btn-primary mt-1" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
+          <button class="btn btn-primary d-flex mt-2 mx-auto" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
+        </div> 
 
-        </div>
-        <div class="carousel-item">
+       
+         <div class="carousel-item">
           <img src="img/img.png" class="d-block w-100" alt="Gambar 3">
-      <button class="btn btn-primary mt-1" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
+          <button class="btn btn-primary d-flex mt-2 mx-auto" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
+    </div> 
 
-        </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -62,7 +64,8 @@
       </button>
     </div>
     
-    <div id="orderForm" class="mt-4" style="display: none;">
+    <div id="orderForm" style="display: none;">
+      <button type="button" class="btn-close" aria-label="Close" onclick="closeOrderForm()"></button>
       <form>
         <div class="mb-3">
           <label for="jumlahPesanan" class="form-label">Jumlah Pesanan:</label>
@@ -75,6 +78,7 @@
         <button type="submit" class="btn btn-primary">Pesan</button>
       </form>
     </div>
+
     <div id="error-message">Mohon maaf, web ini hanya dapat diakses melalui perangkat mobile.</div>
   </div>
 
@@ -84,7 +88,9 @@
     function showOrderForm() {
       document.getElementById("orderForm").style.display = "block";
     }
-    
+    function closeOrderForm() {
+      document.getElementById("orderForm").style.display = "none";
+    }
 
     window.addEventListener("load", function() {
       var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
