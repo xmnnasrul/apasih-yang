@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Restoran</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    #error-message {
+      display: none;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: red;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="gambar1.jpg" class="d-block w-100" alt="Gambar 1">
+        </div>
+        <div class="carousel-item">
+          <img src="gambar2.jpg" class="d-block w-100" alt="Gambar 2">
+        </div>
+        <div class="carousel-item">
+          <img src="gambar3.jpg" class="d-block w-100" alt="Gambar 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="mt-4">
+      <button class="btn btn-primary" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
+    </div>
+    <div id="orderForm" class="mt-4" style="display: none;">
+      <form>
+        <div class="mb-3">
+          <label for="jumlahPesanan" class="form-label">Jumlah Pesanan:</label>
+          <input type="number" class="form-control" id="jumlahPesanan" placeholder="Masukkan jumlah pesanan">
+        </div>
+        <div class="mb-3">
+          <label for="harga" class="form-label">Harga:</label>
+          <input type="text" class="form-control" id="harga" placeholder="Masukkan harga">
+        </div>
+        <button type="submit" class="btn btn-primary">Pesan</button>
+      </form>
+    </div>
+    <div id="error-message">Mohon maaf, web ini hanya dapat diakses melalui perangkat mobile.</div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+    function showOrderForm() {
+      document.getElementById("orderForm").style.display = "block";
+    }
+
+    window.addEventListener("load", function() {
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      if (screenWidth > 768) {
+        document.getElementById("error-message").style.display = "block";
+        document.getElementById("carouselExampleControls").style.display = "none";
+        document.getElementById("orderButton").style.display = "none";
+        document.getElementById("orderForm").style.display = "none";
+      }
+    });
+  </script>
+</body>
+
+</html>
