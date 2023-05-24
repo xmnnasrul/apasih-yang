@@ -4,14 +4,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
-#error-message {
-  display: none;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: red;
-  margin-top: 20px;
-}
+
 footer {
   background-color: #007bff;
   padding: 20px;
@@ -38,7 +31,7 @@ section#menu {
   position: absolute;
   width: 300px;
   z-index: 999;
-  top: 40%;
+  top: 45%;
   left: 7%;
   margin: auto;
   display: flex;

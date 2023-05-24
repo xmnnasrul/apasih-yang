@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <style>
       .ashuuu {
         position: fixed;
@@ -56,27 +56,33 @@
       <section class="landing-page min-vh-100" id="landing-page">
         <h1>Selamat Datang di Restoran</h1>
         <p>Nikmati berbagai hidangan lezat kami</p>
-        <button class="btn btn-primary rounded">Lihat Menu</button>
+        <button class="btn btn-primary rounded" onclick="scrollToSection('menu')">Lihat Menu</button>
       </section>
 
       <section class="menu min-vh-100" id="menu">
         <!-- form -->
         <div id="formContainer1" class="d-none">
           <div>
-            <h5 class="text-center">masukan data diri untuk melanjutkan memesan bakso celeng!</h5>
+            <h5 class="text-center">masukan data diri untuk melanjutkan memesan bakso "Waduh"</h5>
           </div>
-          <form>
+          <form name="submit-to-google-sheet1">
+            <div class="form-group d-none">
+              <label for="pesanan">bakso</label>
+              <input type="text" value="bakso" class="form-control" name="pesanan" id="pesanan" />
+            </div>
+
             <div class="form-group">
               <label for="nama">Nama</label>
-              <input type="text" class="form-control" id="nama" placeholder="nama" />
+              <input type="text" class="form-control" name="nama" id="nama" placeholder="nama" autocomplete="off" required />
             </div>
+
             <div class="form-group">
               <label for="kelas">Kelas</label>
-              <input type="text" class="form-control" id="kelas" placeholder="Kelas" />
+              <input type="text" class="form-control" name="kelas" id="kelas" placeholder="Kelas" autocomplete="off" required />
             </div>
             <div class="form-group">
               <label for="jumlah">jumlah pesanan</label>
-              <input type="number" class="form-control" id="jumlah" placeholder="jumlah pesanan" />
+              <input type="number" class="form-control" name="jumlah-pesanan" id="jumlah" placeholder="jumlah pesanan" autocomplete="off" required />
             </div>
             <button type="button" class="btn btn-outline-primary" onclick="hideForm1()">Cancel</button>
             <button type="submit" class="btn btn-primary" onclick="showAlert()">Kirim</button>
@@ -85,21 +91,32 @@
 
         <div id="formContainer2" class="d-none">
           <div>
-            <h5 class="text-center">masukan data diri untuk melanjutkan memesan bakso garaga celeng!</h5>
+            <h5 class="text-center">masukan data diri untuk melanjutkan memesan pisang lumer coklat / tiramisu</h5>
           </div>
-          <form>
+          <form method="post" name="submit-to-google-sheet2">
+            <div class="form-group d-none">
+              <label for="pesanan">Pisang lumer</label>
+              <input type="text" value="pisang lumer" class="form-control" name="pesanan" id="pesanan" />
+            </div>
             <div class="form-group">
               <label for="nama">Nama</label>
               <input type="text" class="form-control" id="nama" placeholder="nama" />
             </div>
+
             <div class="form-group">
               <label for="kelas">Kelas</label>
               <input type="text" class="form-control" id="kelas" placeholder="Kelas" />
             </div>
-
+            <div class="form-group">
+              <label for="varian">Varian Rasa</label>
+              <select name="varian" class="form-control" id="varian">
+                <option value="coklat">Coklat</option>
+                <option value="tiramisu">Tiramisu</option>
+              </select>
+            </div>
             <div class="form-group">
               <label for="jumlah">Jumlah pesanan</label>
-              <input type="number" class="form-control" id="jumlah" placeholder="jumlah pesanan" />
+              <input type="number" name="jumlah-pesanan" class="form-control" id="jumlah" placeholder="jumlah pesanan" />
             </div>
             <button type="button" class="btn btn-outline-primary" onclick="hideForm2()">Cancel</button>
             <button type="submit" class="btn btn-primary" onclick="showAlert()">Submit</button>
@@ -108,21 +125,25 @@
 
         <div id="formContainer3" class="d-none">
           <div>
-            <h5 class="text-center">masukan data diri untuk melanjutkan memesan bakso celengan!</h5>
+            <h5 class="text-center">masukan data diri untuk memesan Es Teh</h5>
           </div>
-          <form>
+          <form method="post" name="submit-to-google-sheet3">
+            <div class="form-group d-none">
+              <label for="pesanan">Es Teh</label>
+              <input type="text" value="Es Teh" class="form-control" name="pesanan" id="pesanan" />
+            </div>
             <div class="form-group">
               <label for="nama">Nama</label>
-              <input type="text" class="form-control" id="nama" placeholder="nama" />
+              <input type="text" class="form-control" name="nama" name="nama" id="nama" placeholder="nama" />
             </div>
             <div class="form-group">
               <label for="kelas">Kelas</label>
-              <input type="text" class="form-control" id="kelas" placeholder="Kelas" />
+              <input type="text" class="form-control" name="kelas" name="kelas" id="kelas" placeholder="Kelas" />
             </div>
 
             <div class="form-group">
               <label for="jumlah">Jumlah Pesanan</label>
-              <input type="number" class="form-control" id="jumlah" placeholder="jumlah pesanan" />
+              <input type="number" class="form-control" name="jumlah-pesanan" id="jumlah" placeholder="jumlah pesanan" />
             </div>
             <button type="button" class="btn btn-outline-primary" onclick="hideForm3()">Cancel</button>
             <button type="submit" class="btn btn-primary" onclick="showAlert()">Submit</button>
@@ -137,7 +158,7 @@
         <div id="ashuuu" class="d-none ashuuu">
           <div id="floatingAlert" class="alert alert-info floating-alert">
             <span class="mb-2">Data berhasil dikirim! jika pesanan belum dikirim maka hubungi nomer dibawah!</span>
-            <a href="https://api.whatsapp.com/send?phone=6283872117820" target="_blank" class="btn btn-success mt-2"> <i class="bi bi-whatsapp mr-2"></i>WhatsApp </a>
+            <a href="https://api.whatsapp.com/send?phone=6283872117820" target="_blank"> <i class="bi bi-whatsapp mr-2"></i>WhatsApp </a>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="remAlert()">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -150,19 +171,28 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner px-0">
             <div class="carousel-item active px-2">
-              <img src="img/img.png" class="d-block w-100 rounded-lg" alt="..." />
+              <div class="text-center mb-1">
+                <h4>Bakso propeler</h4>
+              </div>
+              <img src="img/bakso.png" class="d-block w-100 rounded-lg" alt="..." />
               <div class="text-center my-3">
                 <button id="showFormButton" class="btn btn-primary text-center" onclick="showForm1()">Pesan</button>
               </div>
             </div>
             <div class="carousel-item px-2">
-              <img src="img/img.png" class="d-block w-100 rounded-lg" alt="..." />
+              <div class="text-center mb-1">
+                <h4>Pisang Lumer coklat / tiramisu</h4>
+              </div>
+              <img src="img/pisang.png" class="d-block w-100 rounded-lg" alt="..." />
               <div class="text-center my-3">
                 <button id="showFormButton" class="btn btn-primary text-center" onclick="showForm2()">Pesan</button>
               </div>
             </div>
             <div class="carousel-item px-2">
-              <img src="img/img.png" class="d-block w-100 rounded-lg" alt="..." />
+              <div class="text-center mb-1">
+                <h4>Es Teh</h4>
+              </div>
+              <img src="img/teh.png" class="d-block w-100 rounded-lg" alt="..." />
               <div class="text-center my-3">
                 <button id="showFormButton" class="btn btn-primary text-center" onclick="showForm3()">Pesan</button>
               </div>
