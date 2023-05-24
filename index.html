@@ -1,223 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Restoran</title>
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      #error-message {
+        display: none;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        margin-top: 20px;
+      }
+      footer {
+        background-color: #007bff;
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+        padding-bottom: 10px;
+      }
+      #orderForm {
+        display: flex;
+        width: 300px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      .whatsapp-btn {
+        background-color: #4ac959;
+        color: #fff;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Restoran</title>
-  <!-- Bootstrap CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <style>
-    body{
-      font-family: 'Poppins', sans-serif;
-    }
-    #error-message {
-      display: none;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      color: red;
-      margin-top: 20px;
-    }
-    footer {
-      background-color: #007bff;
-      padding: 20px;
-      text-align: center;
-      color: #fff;
-      padding-bottom: 10px;
-    }
-    #orderForm {
-      display: flex;
-      width: 300px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #fff;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-    .whatsapp-btn {
-      background-color: #4AC959;
-      color: #fff;
-    }
-
-    .whatsapp-btn:hover {
-      background-color: #3DAB4F;
-      color: #fff;
-    }
-    .landing-page {
-      min-height: 100vh;
-  background-color: #f9f9f9;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  text-align: center;
-    }
-  </style>
-</head>
-
-<body>
-  <nav id="nav"class="navbar navbar-expand-lg navbar-dark bg-primary">
+      .whatsapp-btn:hover {
+        background-color: #3dab4f;
+        color: #fff;
+      }
+      .landing-page {
+        min-height: 100vh;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">Restoran </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      <a class="navbar-brand" href="#">Restoran </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-         
-          <li class="nav-item">
-            <a class="nav-link" href="#menu">Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Kontak</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="landing-page" id="landing-page">
-      <h1>Selamat Datang di Restoran </h1>
-      <p>Nikmati berbagai hidangan lezat kami</p>
-      <button class="btn btn-primary" onclick="scrollToMenu()">Lihat Menu</button>
-    </div>
-
-<section id="menu">
-<div id="judul" class="text-center m-3 display-4">MENU</div>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-
-        <div class="carousel-item active">
-          <img src="img/img.png" class="d-block w-100" alt="Gambar 1">
-          <button class="btn btn-primary d-flex mt-2 mx-auto" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
-        </div> 
-
-        <div class="carousel-item">
-          <img src="img/img.png" class="d-block w-100" alt="Gambar 2">
-          <button class="btn btn-primary d-flex mt-2 mx-auto" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
-        </div> 
-
-        <div class="carousel-item">
-          <img src="img/img.png" class="d-block w-100" alt="Gambar 3">
-          <button class="btn btn-primary d-flex mt-2 mx-auto" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
-        </div> 
-
-
+      <div class="landing-page" id="landing-page">
+        <h1>Selamat Datang di Restoran</h1>
+        <p>Nikmati berbagai hidangan lezat kami</p>
+        <button class="btn btn-primary" onclick="scrollToMenu()">Lihat Menu</button>
       </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+      <section id="menu">
+        <div id="judul" class="text-center m-3 display-4">MENU</div>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/img.png" class="d-block w-100" alt="Gambar 1" />
+              <button class="btn btn-primary d-flex mt-2 mx-auto" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
+            </div>
 
+            <div class="carousel-item">
+              <img src="img/img.png" class="d-block w-100" alt="Gambar 2" />
+              <button class="btn btn-primary d-flex mt-2 mx-auto" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
+            </div>
 
-    <!-- form pesana menu 1 -->
-    <div id="orderForm" style="display: none; " class="rounded rounded-full">
-      <button type="button" class="btn-close" aria-label="Close" onclick="closeOrderForm()"></button>
-      <h1 class="text-center">test</h1>
-      <form>
-<fieldset disabled>
-  <div class="form-group mb-3">
-    <label for="disabledTextInput">Nama menu</label>
-    <input type="text" id="disabledTextInput" class="form-control" placeholder="bakso celeng">
-  </div>
-</fieldset>
-<div class="mb-3">
-          <label for="name" class="form-label">Nama</label>
-          <input type="text" class="form-control rounded" id="name" placeholder="Masukkan nama" required autocomplete="off">
+            <div class="carousel-item">
+              <img src="img/img.png" class="d-block w-100" alt="Gambar 3" />
+              <button class="btn btn-primary d-flex mt-2 mx-auto" id="orderButton" onclick="showOrderForm()">Pesan Sekarang</button>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="mb-3">
-          <label for="kelas" class="form-label">Kelas</label>
-          <input type="text" class="form-control rounded" id="kelas" placeholder="Masukkan kelas" required autocomplete="off">
+
+        <!-- form pesana menu 1 -->
+        <div id="orderForm" style="display: none" class="rounded rounded-full">
+          <button type="button" class="btn-close" aria-label="Close" onclick="closeOrderForm()"></button>
+          <h1 class="text-center">test</h1>
+          <form>
+            <fieldset disabled>
+              <div class="form-group mb-3">
+                <label for="disabledTextInput">Nama menu</label>
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="bakso celeng" />
+              </div>
+            </fieldset>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nama</label>
+              <input type="text" class="form-control rounded" id="name" placeholder="Masukkan nama" required autocomplete="off" />
+            </div>
+            <div class="mb-3">
+              <label for="kelas" class="form-label">Kelas</label>
+              <input type="text" class="form-control rounded" id="kelas" placeholder="Masukkan kelas" required autocomplete="off" />
+            </div>
+            <div class="mb-3">
+              <label for="pesanan" class="form-label">Jumlah pesanan</label>
+              <input type="number" class="form-control rounded" id="pesanan" placeholder="jumlah pesanan" required autocomplete="off" />
+            </div>
+            <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#alertModal">Kirim</button>
+          </form>
         </div>
-        <div class="mb-3">
-          <label for="pesanan" class="form-label">Jumlah pesanan</label>
-          <input type="number" class="form-control rounded" id="pesanan" placeholder="jumlah pesanan" required autocomplete="off">
-        </div>
-        <button type="button" class="btn btn-primary rounded-pill"  data-bs-toggle="modal" data-bs-target="#alertModal">Kirim</button>
-      </form>
-    </div>
+      </section>
 
+      <!-- modal -->
+      <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Perhatian</h5>
+                  <p class="card-text">jika pesanan belum juga diantar silahkan hubungi nomor dibawah ini</p>
 
-
-  </div>
-</section>
-
-<div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Perhatian</h5>
-            <p class="card-text">jika pesanan belum juga diantar silahkan hubungi nomor dibawah ini</p>
-
-            <a href="https://api.whatsapp.com/send/?phone=6282134393412&text&type=phone_number&app_absent=0" without rel="noreferrer"  target="_blank" class="text-decoration-none">
-              <button type="button" class="btn whatsapp-btn">
-                <i class="bi bi-whatsapp me-2" style="font-size: 20px;"></i>
-                WhatsApp
-              </button>
-            </a>
-
+                  <a href="https://api.whatsapp.com/send/?phone=6282134393412&text&type=phone_number&app_absent=0" without rel="noreferrer" target="_blank" class="text-decoration-none">
+                    <button type="button" class="btn whatsapp-btn">
+                      <i class="bi bi-whatsapp me-2" style="font-size: 20px"></i>
+                      WhatsApp
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-      </div>
+
+      <div id="error-message">Mohon maaf, web ini hanya dapat diakses melalui perangkat mobile.</div>
     </div>
-  </div>
-</div>
-  
-  <div id="error-message">Mohon maaf, web ini hanya dapat diakses melalui perangkat mobile.</div>
-  <footer class="mt-3" id="footer">
-    <p>&copy; 2023 Restoran . All rights reserved.</p>
-  </footer>
+    <footer class="mt-3" id="footer">
+      <p>&copy; 2023 Restoran . All rights reserved.</p>
+    </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdeliSvr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script>
-
-    function showOrderForm() {
-      document.getElementById("orderForm").style.display = "block";
-    }
-    function closeOrderForm() {
-      document.getElementById("orderForm").style.display = "none";
-    }
-    function scrollToMenu() {
-      const menuSection = document.getElementById("menu");
-      menuSection.scrollIntoView({ behavior: "smooth" });
-    }
-    window.addEventListener("load", function() {
-      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-      if (screenWidth > 768) {
-        document.getElementById("error-message").style.display = "block";
-        document.getElementById("carouselExampleControls").style.display = "none";
-        document.getElementById("orderButton").style.display = "none";
-        document.getElementById("orderForm").style.display = "none";
-        document.getElementById("menu").style.display = "none";
-        document.getElementById("landing-page").style.display = "none";
-        document.getElementById("footer").style.display = "none";
-        document.getElementById("nav").style.display = "none";
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdeliSvr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      function showOrderForm() {
+        document.getElementById("orderForm").style.display = "block";
       }
-    });
-  </script>
-</body>
-
+      function closeOrderForm() {
+        document.getElementById("orderForm").style.display = "none";
+      }
+      function scrollToMenu() {
+        const menuSection = document.getElementById("menu");
+        menuSection.scrollIntoView({ behavior: "smooth" });
+      }
+      window.addEventListener("load", function () {
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        if (screenWidth > 768) {
+          document.getElementById("error-message").style.display = "block";
+          document.getElementById("carouselExampleControls").style.display = "none";
+          document.getElementById("orderButton").style.display = "none";
+          document.getElementById("orderForm").style.display = "none";
+          document.getElementById("menu").style.display = "none";
+          document.getElementById("landing-page").style.display = "none";
+          document.getElementById("footer").style.display = "none";
+          document.getElementById("nav").style.display = "none";
+        }
+      });
+    </script>
+  </body>
 </html>
